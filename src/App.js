@@ -6,7 +6,7 @@ import Logout from './views/logout';
 import NewsSourcesView from './views/newssourcesview';
 import NewsView from './views/newsview';
 import Login from './views/login';
-import NotFound from './views/notfound';
+//import NotFound from './views/notfound';
 import user from './model/user';
 
 //const NotFoundRoute = Router.NotFoundRoute;
@@ -25,7 +25,6 @@ function App() {
         <Route exact path="/:id&:sort" component={NewsView} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/logout" component={Logout} />
-        <Route exact path="*" component={NotFound} />
       </div>
     </Router>
   );

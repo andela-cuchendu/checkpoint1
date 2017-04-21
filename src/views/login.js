@@ -9,16 +9,14 @@ const history = createHistory({
 });
 let userClick = false;
 let LoginButton = React.createClass({
-
-  onSignIn: function(googleUser) {
+  onSignIn(googleUser) {
     const w3 = googleUser.getBasicProfile();
-    console.log("user signed in", userClick);
+    console.log('user signed in', userClick);
     if (userClick === true) {
       user.Login(w3);
       history.push('/');
 
-    }
-
+    };
   },
   onClick: function(googleUser) {
     console.log('clicked');
