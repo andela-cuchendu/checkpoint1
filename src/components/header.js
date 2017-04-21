@@ -20,18 +20,15 @@ export default class Menu extends Component {
   }
   render() {
     const { user } = this.props;
-    if (!user.isLogin) {
-      return (<div/>);
-    }
     return (
       <div className="newsBar">
         <Navbar toggleable>
           <NavbarToggler right onClick={this.toggle} />
-          <NavbarBrand className="navBrand" href="/">News Feed | Andela</NavbarBrand>
+          <NavbarBrand className="navBrand" href="/">Home</NavbarBrand>
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink exact activeClassName="active" to="/">Home</NavLink>
+                <NavLink exact activeClassName="active" to="/logout">Logout</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

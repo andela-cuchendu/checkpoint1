@@ -1,6 +1,5 @@
-import createHistory from 'history/createBrowserHistory';
-import GoogleLogin from 'react-google-login';
 import React, { Component } from 'react';
+import createHistory from 'history/createBrowserHistory';
 import logo from './img/logo.svg';
 import './scss/App.scss';
 
@@ -9,23 +8,18 @@ const history = createHistory({
 });
 
 class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.responseGoogleSuccess = this.responseGoogleSuccess.bind(this);
-    this.responseGoogleFailure = this.responseGoogleFailure.bind(this);
+  componentWillMount() {
+    const user = this._reactInternalInstance._hostParent._currentElement.props.children['0'].props.user;
+    if (user.isLogin) {
+      console.log('user is in, go home');
+    }
   }
-  responseGoogleSuccess(response) {
-    const userobj = { name: response.profileObj.name,
-      email: response.profileObj.email,
-      imageUrl: response.profileObj.imageUrl };
-    const { user } = this.props;
-    user.login(userobj);
-    history.push('/');
+  onSuccess(googleUser) {
+    console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
   }
-  responseGoogleFailure(response) {
-    console.log('This is failure call back with error: ', response);
+  onFailure(error) {
+    console.log('error',error);
   }
-
   render() {
     return (
       <div className="App">
@@ -36,17 +30,14 @@ class Login extends Component {
         <p className="App-intro">
           To get started, click on the button below to sign in with Google+
         </p>
-        <GoogleLogin
-          clientId={'1096974446096-dh2ug8hmser1u7qqk9v1pe8ujkn7ih7t.apps.googleusercontent.com'}
-          onSuccess={this.responseGoogleSuccess}
-          onFailure={this.responseGoogleFailure}
-          offline={false}
-        >
-          <span> Login with Google+</span>
-        </GoogleLogin>
+        <button
+          className="g-signin2"
+          onClick={this.onSignIn}
+          data-onsuccess="onSignIn"
+          data-onfailure="onFailure"
+        />
       </div>
     );
   }
 }
-
 export default Login;
