@@ -5,7 +5,7 @@ class SourcesContainer {
 
   add(id, name, description, category, sortBysAvailable) {
     this.sources.push({
-      href: `/articles/${id}`,
+      href: `/${id}`,
       header: name,
       description,
       category,

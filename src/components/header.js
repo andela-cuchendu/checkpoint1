@@ -4,6 +4,8 @@ from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import '../../public/style.scss';
 
+import user from '../model/user';
+
 export default class Menu extends Component {
   constructor(props) {
     super(props);
@@ -19,21 +21,23 @@ export default class Menu extends Component {
     });
   }
   render() {
-    const { user } = this.props;
-    return (
-      <div className="newsBar">
-        <Navbar toggleable>
-          <NavbarToggler right onClick={this.toggle} />
-          <NavbarBrand className="navBrand" href="/">Home</NavbarBrand>
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink exact activeClassName="active" to="/logout">Logout</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
-    );
+    if(user.isLogin) {
+      return (
+        <div className="newsBar">
+          <Navbar toggleable>
+            <NavbarToggler right onClick={this.toggle} />
+            <NavbarBrand className="navBrand" href="/">Home</NavbarBrand>
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav className="ml-auto" navbar>
+                <NavItem>
+                  <NavLink exact activeClassName="active" to="/logout">Logout</NavLink>
+                </NavItem>
+              </Nav>
+            </Collapse>
+          </Navbar>
+        </div>
+      );
+    }
+    return (<div></div>);
   }
 }

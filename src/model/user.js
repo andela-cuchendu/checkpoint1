@@ -12,9 +12,9 @@ class User {
   }
   Login(context) {
     Cookies.set('mynewsapp', {
-      name: context.name,
-      email: context.email,
-      imageUrl: context.imageUrl,
+      name: context.ig,
+      email: context.U3,
+      imageUrl: context.Paa,
     });
   }
   isLoggedIn() {

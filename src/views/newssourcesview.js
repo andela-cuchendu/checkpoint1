@@ -1,8 +1,15 @@
+import createHistory from 'history/createBrowserHistory';
 import React, { Component } from 'react';
 import { InputGroup, Input, Card, CardText, CardTitle, CardSubtitle, Row, Col } from 'reactstrap';
 import NewsSourcesStore from '../stores/NewsSourcesStore';
 import NewsActions from '../actions/NewsActions';
 import '../../public/style.scss';
+import user from '../model/user';
+
+
+const history = createHistory({
+  forceRefresh: true,
+});
 
 class NewsSourcesView extends Component {
   constructor() {
@@ -15,7 +22,11 @@ class NewsSourcesView extends Component {
     this.getItemsState = this.getItemsState.bind(this);
     this._onChange = this._onChange.bind(this);
   }
-
+  componentWillMount() {
+    if (!user.isLogin) {
+      history.push('/login');
+    }
+  }
 // Method to retrieve state from Stores
   getItemsState() {
     return {
@@ -38,6 +49,7 @@ class NewsSourcesView extends Component {
   componentDidMount() {
     NewsSourcesStore.addChangeListener(this._onChange);
     NewsActions.getSources();
+    console.log('user',user);
   }
 
   componentWillUnMount() {
@@ -49,8 +61,8 @@ class NewsSourcesView extends Component {
   }
 
   handleQueryValue(href) {
-    console.log('our ref: ',href);
-    this.props.history.push(href);
+    console.log(href);
+    history.push(href);
   }
 
   render() {

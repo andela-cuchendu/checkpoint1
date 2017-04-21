@@ -13,6 +13,7 @@ class NewsView extends Component {
       allItems: [],
     };
     this.onChange = this.onChange.bind(this);
+    console.log('in con');
   }
 
   getInitialState() {
@@ -42,7 +43,7 @@ class NewsView extends Component {
     this.setState({ allItems: NewsStore.getAll() });
   }
 
-  handleSort(event){
+  handleSort(event) {
     const { match } = this.props;
     event.preventDefault();
     const val = event.target.value;
