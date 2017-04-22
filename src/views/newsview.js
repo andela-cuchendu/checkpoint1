@@ -1,9 +1,14 @@
+import createHistory from 'history/createBrowserHistory';
 import React, { Component, PropTypes } from 'react';
 import { Form, FormGroup, Input, Card, CardText, CardBlock,
   CardTitle, CardSubtitle, Row, Col } from 'reactstrap';
 import NewsStore from '../stores/NewsStore';
 import NewsActions from '../actions/NewsActions';
+import user from '../model/user';
 
+const history = createHistory({
+  forceRefresh: true,
+});
 
 class NewsView extends Component {
 
@@ -21,7 +26,9 @@ class NewsView extends Component {
   }
   componentWillMount() {
     const { match } = this.props;
-    console.log(match.params, 'in com will mount');
+    if (!user.isLogin) {
+      history.push('/login');
+    }
   }
   componentDidMount() {
     const { match } = this.props;

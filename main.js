@@ -5,4 +5,4 @@ import App from './src/App';
 import user from './src/model/user';
 
 const root = document.getElementById('app');
-ReactDom.render(<App user={user} />, root);
+ReactDom.render(<App user={ user } />, root);

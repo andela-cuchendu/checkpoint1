@@ -12,9 +12,7 @@ class Logout extends Component {
     if (user.isLogin) {
       user.logOut();
       history.push('/login');
-    }
-    else {
-      console.log('user is not in, keep him in log in');
+    } else {
       history.push('/login');
     }
   }

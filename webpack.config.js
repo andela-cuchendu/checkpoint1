@@ -32,7 +32,6 @@ module.exports = {
           'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false',
         ],
       },
-
     ],
   },
 };
