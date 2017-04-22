@@ -44,6 +44,7 @@ NewsDispatcher.register((payload) => {
     default:
       return true;
   }
+  return true;
 });
 
 export default NewsStore;

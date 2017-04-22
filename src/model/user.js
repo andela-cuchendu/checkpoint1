@@ -33,8 +33,9 @@ class User {
     this.favorites.forEach((item) => {
       if (item === newItem) {
         exists = true;
-        return;
+        return true;
       }
+      return true;
     });
     if (!exists) {
       if (this.isLogin) {

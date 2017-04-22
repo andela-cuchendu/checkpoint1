@@ -11,21 +11,25 @@ const history = createHistory({
 });
 
 class NewsView extends Component {
-
+  static getItemsState() {
+    return {
+      allItems: NewsStore.getAll(),
+    };
+  }
   constructor() {
     super();
     this.state = {
       allItems: [],
     };
     this.onChange = this.onChange.bind(this);
-    console.log('in con');
+    this.handleSort = this.handleSort.bind(this);
   }
 
   getInitialState() {
     return { allItems: null };
   }
+
   componentWillMount() {
-    const { match } = this.props;
     if (!user.isLogin) {
       history.push('/login');
     }
@@ -40,12 +44,6 @@ class NewsView extends Component {
     NewsStore.removeChangeListener(this.onChange);
   }
 
-  getItemsState() {
-    return {
-      allItems: NewsStore.getAll(),
-    };
-  }
-
   onChange() {
     this.setState({ allItems: NewsStore.getAll() });
   }
@@ -54,20 +52,13 @@ class NewsView extends Component {
     const { match } = this.props;
     event.preventDefault();
     const val = event.target.value;
-    console.log(`${match.params.id}&sortBy=${val}`, 'sorting');
     NewsActions.getNews(`${match.params.id}&sortBy=${val}`);
   }
-   /**
-   * @return {object}
-   */
 
   render() {
     const { match } = this.props;
-    console.log(match.params.sort, "spilt string array");
-    let sort = match.params.sort.split(',');
-    console.log(sort, "sort array");
-    let option = sort.map(type => <option value={type} > {type} </option> );
-    console.log(option, "our option");
+    const sort = match.params.sort.split(',');
+    const option = sort.map(type => <option value={type} > {type} </option>);
     return (
       <div>
         <div>
@@ -77,7 +68,10 @@ class NewsView extends Component {
           <div className="right">
             <Form className="order">
               <FormGroup>
-                <Input type="select" name="select" id="exampleSelect" onChange={this.handleSort.bind(this)}>
+                <Input
+                  id="exampleSelect" name="select" onChange={this.handleSort}
+                  type="select"
+                >
                   <option>Sort News By</option>
                   {option}
                 </Input>
@@ -90,13 +84,13 @@ class NewsView extends Component {
 
         <Row>
           {this.state.allItems.map(news => (
-            <Col xs="3" sm="3" className="news-frame">
+            <Col className="news-frame" sm="3" xs="3">
               <Card className="headline">
-                <img width="100%" src={news.image} />
+                <img alt="news" src={news.image} width="100%" />
                 <CardBlock>
                   <CardTitle className="title">{news.meta}</CardTitle>
                   <CardSubtitle className="subtitle">{news.header}</CardSubtitle>
-                </CardBlock>                
+                </CardBlock>
                 <CardBlock>
                   <CardText>{news.description}</CardText>
                   <a href={news.href} rel="noopener noreferrer" target="_blank" >Read More</a>
@@ -110,10 +104,11 @@ class NewsView extends Component {
   }
 
 }
-
 NewsView.propTypes = {
   match: PropTypes.routes,
 };
-
+NewsView.defaultProps = {
+  match: null,
+};
 
 export default NewsView;

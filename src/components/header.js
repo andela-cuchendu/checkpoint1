@@ -21,7 +21,7 @@ export default class Menu extends Component {
     });
   }
   render() {
-    if(user.isLogin) {
+    if (user.isLogin) {
       return (
         <div className="newsBar">
           <Navbar toggleable>
@@ -38,6 +38,6 @@ export default class Menu extends Component {
         </div>
       );
     }
-    return (<div></div>);
+    return (<div />);
   }
 }

@@ -5,17 +5,11 @@ import SourcesContainer from '../configs/SourcesContainer';
 import NewsContainer from '../configs/NewsContainer';
 import Api from '../utils/Api';
 
-
-
 const NewsActions = {
 
   getNews: (source) => {
-    console.log(Api.getLink(), 'before api call');
     Api.resetQuery();
-    //let source = source.substr(source.index('&'));
     Api.addQuery('source', source);
-    console.log(source, 'query');
-    console.log(Api.addQuery('source', source), 'another query');
     axios(Api.getLink()).then((response) => {
       const feeds = new NewsContainer(); // initialize variable to news features
       const body = response.data;

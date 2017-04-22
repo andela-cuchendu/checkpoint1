@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 class Api {
   constructor() {
     this.apiKey = '213327409d384371851777e7c7f78dfe';
@@ -33,7 +32,6 @@ class Api {
     })
       .catch((error) => {
         this.errorMessage = error;
-        console.log(this.errorMessage);
       });
   }
 

@@ -15,17 +15,17 @@ const history = createHistory();
 
 function App() {
   return (
-    <Router history={ history } user={ user } >
+    <Router history={history} user={user} >
       <div>
-        <Menu user={ user } />
+        <Menu user={user} />
         <Switch>
-          <Route component={ NewsSourcesView } exact path="/" />
-          <Route component={ NewsView } exact path="/articles/:id&:sort" />
-          <Route component={ NewsView } exact path="/:id&:sort" />
-          <Route component={ Login } exact path="/login" />
-          <Route component={ Logout } exact path="/logout" />
-          <Route component={ NotFound } exact path="/:id" />
-          <Route component={ NotFound } exact path="*" />
+          <Route component={NewsSourcesView} exact path="/" />
+          <Route component={NewsView} exact path="/articles/:id&:sort" />
+          <Route component={NewsView} exact path="/:id&:sort" />
+          <Route component={Login} exact path="/login" />
+          <Route component={Logout} exact path="/logout" />
+          <Route component={NotFound} exact path="/:id" />
+          <Route component={NotFound} exact path="*" />
         </Switch>
       </div>
     </Router>

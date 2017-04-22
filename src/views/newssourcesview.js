@@ -18,51 +18,43 @@ class NewsSourcesView extends Component {
       sources: [],
       search: '',
     };
-
     this.getItemsState = this.getItemsState.bind(this);
-    this._onChange = this._onChange.bind(this);
+    this.onChange2 = this.onChange2.bind(this);
+    this.updateSearch = this.updateSearch.bind(this);
   }
+  getInitialState() {
+    return this.getItemsState();
+  }
+
   componentWillMount() {
     if (!user.isLogin) {
       history.push('/login');
     }
   }
-// Method to retrieve state from Stores
-  getItemsState() {
-    return {
-      sources: NewsSourcesStore.getAll(),
-    };
+  componentDidMount() {
+    NewsSourcesStore.addChangeListener(this.onChange2);
+    NewsActions.getSources();
   }
 
-// Get initial state from stores
-  getInitialState() {
-    return getItemsState();
-  }
-
-  _onChange() {
+  onChange2() {
     const itemState = this.getItemsState();
     this.setState({
       sources: itemState.sources || [],
     });
   }
 
-  componentDidMount() {
-    NewsSourcesStore.addChangeListener(this._onChange);
-    NewsActions.getSources();
-    console.log('user',user);
+  getItemsState() {
+    return {
+      sources: NewsSourcesStore.getAll(),
+    };
   }
 
   componentWillUnMount() {
-    NewsSourcesStore.removeChangeListener(this._onChange);
+    NewsSourcesStore.removeChangeListener(this.onChange2);
   }
 
   updateSearch(event) {
     this.setState({ search: event.target.value });
-  }
-
-  handleQueryValue(href) {
-    console.log(href);
-    history.push(href);
   }
 
   render() {
@@ -74,23 +66,25 @@ class NewsSourcesView extends Component {
         <div className="searchBar">
           <InputGroup>
             <Input
-              className="input" placeholder="Search based on news source"
-              value={this.state.search} onChange={this.updateSearch.bind(this)}
+              className="input" onChange={this.updateSearch}
+              placeholder="Search based on news source" value={this.state.search}
             />
           </InputGroup>
         </div>
 
         <Row>
           {filteredSources.map(source => (
-            <Col xs="6" sm="6" className="tile">
-              <Card block key={source.id}
-                className="bl" inverse color="info"
-                onClick={this.handleQueryValue.bind(this, `${source.href}&${source.sortBysAvailable}`)}
-              >
-                <CardTitle>{source.title}</CardTitle>
-                <CardSubtitle>Category: {source.category}</CardSubtitle>
-                <CardText>{source.description}</CardText>
-              </Card>
+            <Col className="tile" sm="6" xs="6" >
+              <a href={`${source.href}&${source.sortBysAvailable}`} >
+                <Card
+                  block className="bl" color="info"
+                  inverse key={source.id}
+                >
+                  <CardTitle>{source.title}</CardTitle>
+                  <CardSubtitle>Category: {source.category}</CardSubtitle>
+                  <CardText>{source.description}</CardText>
+                </Card>
+              </a>
             </Col>
           ))}
         </Row>
@@ -99,6 +93,5 @@ class NewsSourcesView extends Component {
     );
   }
 }
-
 
 export default NewsSourcesView;

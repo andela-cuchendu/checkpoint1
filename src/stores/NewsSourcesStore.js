@@ -3,7 +3,6 @@ import { EventEmitter } from 'events';
 import NewsDispatcher from '../dispatcher/NewsDispatcher';
 import NewsActionTypes from '../constants/NewsActionTypes';
 
-
 const CHANGE_EVENT = 'change';
 
 const NewsSourcesStore = assign({}, EventEmitter.prototype, {
@@ -44,6 +43,7 @@ NewsDispatcher.register((payload) => {
     default:
       return true;
   }
+  return true;
 });
 
 export default NewsSourcesStore;
