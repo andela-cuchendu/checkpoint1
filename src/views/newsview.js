@@ -4,6 +4,8 @@ import { Form, FormGroup, Input, Card, CardText, CardBlock,
   CardTitle, CardSubtitle, Row, Col } from 'reactstrap';
 import NewsStore from '../stores/NewsStore';
 import NewsActions from '../actions/NewsActions';
+import Share from './share';
+
 import user from '../model/user';
 
 const history = createHistory({
@@ -58,7 +60,7 @@ class NewsView extends Component {
   render() {
     const { match } = this.props;
     const sort = match.params.sort.split(',');
-    const option = sort.map(type => <option value={type} > {type} </option>);
+    const option = sort.map(type => <option value={type} > {type} </option>);  
     return (
       <div>
         <div>
@@ -93,6 +95,7 @@ class NewsView extends Component {
                 </CardBlock>
                 <CardBlock>
                   <CardText>{news.description}</CardText>
+                  <Share title={`${news.header}`} share={`${news.href}`} />
                   <a href={news.href} rel="noopener noreferrer" target="_blank" >Read More</a>
                 </CardBlock>
               </Card>
