@@ -1,6 +1,6 @@
-import createHistory from 'history/createBrowserHistory';
+import createHistory, {DOM} from 'history/createBrowserHistory';
 import React, { Component } from 'react';
-import logo from './img/logo.svg';
+// import logo from './img/logo.svg';
 import './scss/App.scss';
 
 import user from '../model/user';
@@ -20,7 +20,7 @@ class NotFound extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img alt="logo" className="App-logo" src={ logo } />
+
           <h2>Welcome to Jax News Feed</h2>
         </div>
         <p className="App-intro">

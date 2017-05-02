@@ -40,7 +40,7 @@ class GoogleButton extends Component {
       longtitle: true,
       theme: 'dark',
       onsuccess: Parent.onSignIn,
-      onfailure: this.onfailure,
+      onfailure: Parent.onfailure,
     });
   }
 

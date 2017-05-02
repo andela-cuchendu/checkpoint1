@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import createHistory from 'history/createBrowserHistory';
-import logo from './img/logo.svg';
+//import logo from './img/logo.svg';
 import './scss/App.scss';
 import user from '../model/user';
 import GoogleButton from './googlebutton';
@@ -20,7 +20,7 @@ class Login extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+
           <h2>Welcome to Jax News Feed</h2>
         </div>
         <p className="App-intro">

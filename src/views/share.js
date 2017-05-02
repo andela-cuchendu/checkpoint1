@@ -13,14 +13,14 @@ const FacebookIcon = generateShareIcon('facebook');
 const TwitterIcon = generateShareIcon('twitter');
 const GooglePlusIcon = generateShareIcon('google');
 const LinkedinIcon = generateShareIcon('linkedin');
-
+let shareUrl;
 class Share extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
+    shareUrl = null;
   }
   render() {
-    const shareUrl = this.props.share;
+    shareUrl = this.props.share;
     const title = this.props.title;
 
     return (

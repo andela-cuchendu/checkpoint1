@@ -16,6 +16,9 @@ class User {
       email: context.U3,
       imageUrl: context.Paa,
     });
+    this.isLogin = true;
+    this.userDetails = context;
+    this.assignUserValues();
   }
   isLoggedIn() {
     return !(this.userDetails === undefined);
@@ -27,6 +30,12 @@ class User {
       this.email = this.userDetails.email;
       this.imageUrl = this.userDetails.imageUrl;
     }
+  }
+  removeUserValues() {
+    delete this.favorites;
+    delete this.name;
+    delete this.email;
+    delete this.imageUrl;
   }
   addFavorites(newItem) {
     let exists = false;
@@ -56,6 +65,7 @@ class User {
   logOut() {
     this.isLogin = false;
     Cookies.remove('mynewsapp');
+    this.removeUserValues();
   }
 }
 export default new User();
