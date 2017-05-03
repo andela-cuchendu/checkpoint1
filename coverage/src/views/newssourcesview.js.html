@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/views/newssourcesview.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/views</a> newssourcesview.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">56.06% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>37/66</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">40.54% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>15/37</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">31.58% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>6/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">47.83% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>22/46</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import createHistory from 'history/createBrowserHistory';
+import React, { Component } from 'react';
+import { InputGroup, Input, Card, CardText, CardTitle, CardSubtitle, Row, Col } from 'reactstrap';
+import NewsSourcesStore from '../stores/NewsSourcesStore';
+import NewsActions from '../actions/NewsActions';
+import '../../public/style.scss';
+import user from '../model/user';<span class="cstat-no" title="statement not covered" ><span class="missing-if-branch" title="if path not taken" >I</span><span class="missing-if-branch" title="else path not taken" >E</span><span class="missing-if-branch" title="else path not taken" >E</span></span>
+&nbsp;
+&nbsp;
+const history = createHistory({
+  forceRefresh: true,
+});
+&nbsp;
+class NewsSourcesView extends Component {
+  constructor() {
+    super();
+    this.state = {
+      sources: [],
+      search: '',
+    };
+    this.getItemsState = this.getItemsState.bind(this);
+    this.onChange2 = this.onChange2.bind(this);
+    this.updateSearch = this.updateSearch.bind(this);
+  }
+  getInitialState() {
+    return this.getItemsState();
+  }
+&nbsp;
+  componentWillMount() {
+    if (!user.isLogin) {
+      history.push('/login');
+    }
+  }
+  componentDidMount() {
+    NewsS<span class="fstat-no" title="function not covered" >ourcesStore.addC</span>hangeListener(this.onChan<span class="cstat-no" title="statement not covered" >ge2);<span class="cstat-no" title="statement not covered" ></span></span>
+    NewsActions.getSources();
+  }<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span>
+&nbsp;
+  onChange2() {<span class="cstat-no" title="statement not covered" ><span class="branch-1 cbranch-no" title="branch not covered" ><span class="missing-if-branch" title="else path not taken" >E</span><span class="branch-1 cbranch-no" title="branch not covered" ><span class="missing-if-branch" title="if path not taken" >I</span></span></span></span>
+    const itemState = this.getItemsState();
+    this.setState({
+      sources: itemState.sources || [],
+    });
+  }
+&nbsp;
+  getItemsState() {
+    return {
+      sourc<span class="fstat-no" title="function not covered" >es: NewsSourcesS</span>tore.getAll(),
+<span class="cstat-no" title="statement not covered" >    };</span>
+  }
+<span class="cstat-no" title="statement not covered" ></span>
+  componentWillUnMount() {
+<span class="cstat-no" title="statement not covered" >    NewsSourcesStore.removeChangeListener(this.onChange2);</span>
+  }
+&nbsp;
+  updateSearch(event) {
+<span class="cstat-no" title="statement not covered" >    this.setState({ search: event.target.value });</span>
+  }<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+  re<span class="cstat-no" title="statement not covered" >nder() {</span>
+    const filteredSources = this.state.sources.filter(source =&gt; source.title.toLowerCase()
+    .indexOf(this.state.search.toLowerCase()) !== -1);
+&nbsp;
+    return (
+      &lt;div&gt;<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className="searchBar"&gt;</span>
+          &lt;InputGroup&gt;
+            &lt;Input
+              className="input" onChange={this.updateSearch}
+              placeh<span class="fstat-no" title="function not covered" >older="Search based</span> on news source" value={this.state.search}
+<span class="cstat-no" title="statement not covered" >            /&gt;</span>
+<span class="cstat-no" title="statement not covered" >          &lt;/InputGroup&gt;</span>
+        &lt;/div&gt;
+&nbsp;
+        &lt;Row&gt;
+          {filteredSources.map(source =&gt; (
+            &lt;Col cla<span class="fstat-no" title="function not covered" >ssName="tile" sm="</span>6" xs="6" &gt;
+<span class="cstat-no" title="statement not covered" >              &lt;a href={`${source.href}&amp;${source.sortBysAvailable}`} </span>&gt;
+<span class="cstat-no" title="statement not covered" >                &lt;Card</span>
+                  block className="bl" color="info"
+                  inverse key={source.id}
+                &gt;
+                  &lt;C<span class="fstat-no" title="function not covered" >ardTitle&gt;{</span>source.title}&lt;/CardTitle&gt;
+                  &lt;Car<span class="cstat-no" title="statement not covered" >dSubtitle&gt;Category: {</span>source.category}&lt;/CardSubtitle&gt;
+<span class="cstat-no" title="statement not covered" >                  &lt;CardText&gt;{source.description}&lt;/CardText&gt;</span>
+                &lt;/Card&gt;
+              &lt;/a&gt;
+            &lt;/Col&gt;
+          ))}
+        &lt;/Row&gt;
+<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
+    );
+  }
+}
+&nbsp;
+export default NewsSourcesView;
+<span class="fstat-no" title="function not covered" ></span></pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed May 03 2017 19:04:39 GMT+0100 (WAT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

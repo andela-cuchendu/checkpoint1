@@ -12,13 +12,17 @@
     "npm": "3.10.10"
   },
   "scripts": {
-    "test": "nyc mocha --compilers js:./test/compiler.js ./test/*.test.js",
+
+    "test": "nyc --extension .jsx --reporter=html --reporter=text ./node_modules/mocha/bin/_mocha test/testSetup.js test/*test.js",
+    "coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
     "watch": "webpack --watch",
     "build": "webpack -p",
     "dev": "webpack -d --watch",
     "prestart": "webpack -p",
     "serve": "serve ./public",
-    "start": "babel-node server.js"
+    "start": "babel-node server.js",
+    "covercheck": "nyc report --reporter=text-lcov > lcov.info",
+   "codeclimate": "CODECLIMATE_REPO_TOKEN=e2bd0699fb624a167a4843950c836b89c21da1d5489406d0342c0dd36fb27d80 codeclimate-test-reporter < lcov.info"
   },
   "author": "Chibueze Uchendu",
   "license": "MIT",
@@ -60,6 +64,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.24.1",
+    "cover": "^0.2.9",
     "coveralls": "^2.13.1",
     "css-loader": "^0.28.0",
     "enzyme": "^2.8.2",
@@ -69,9 +74,11 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
     "expect": "^1.20.2",
+    "istanbul": "^0.4.5",
     "jest": "^19.0.2",
     "jsdom": "^3.1.2",
     "mocha": "^3.3.0",
+    "mocha-lcov-reporter": "^1.3.0",
     "node-sass": "^4.5.2",
     "nyc": "^10.3.0",
     "react-addons-test-utils": "^15.5.1",
