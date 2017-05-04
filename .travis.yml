@@ -4,10 +4,6 @@ node_js:
 
 after_success:
   - npm run coverage
-  - npm run coveralls
-  - npm install -g codeclimate-test-reporter
-  - codeclimate-test-reporter < lcov.info
 
 after_failure:
   - npm run coverage
-  - npm run coveralls
