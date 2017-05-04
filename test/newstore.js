@@ -2,6 +2,12 @@ import newsStore from '../src/stores/NewsStore';
 import NewsActionTypes from '../src/constants/NewsActionTypes';
 import NewsDispatcher from '../src/dispatcher/NewsDispatcher';
 
+newsStore = rewire('../../src/js/stores/TemplateStore');
+registerSpy = sinon.stub(NewsDispatcher, 'register');
+dispatchSpy = sinon.spy(NewsDispatcher, 'dispatch');
+NewsDispatcher.register(newsStore);
+callback = registerSpy.lastCall.args[0]
+
 describe('NewsStore', () => {
   // mock actions inside dispatch payloads
   const actionGET_NEWS = {
@@ -16,7 +22,17 @@ describe('NewsStore', () => {
   };
   let callback;
   beforeEach(() => {
-    callback = NewsDispatcher.register.mock.calls[0][0];
+    NewsDispatcher.register(function (action) {
+    switch (action.actionType) {
+        case MyConstants.SET_RESULTS:
+            setResults(action.values);
+            MyStore.emitChange();
+            break;
+        default:
+            console.log('unknown action');
+     }
+    });
+    //callback = NewsDispatcher.register.mock.calls[0][0];
   });
   it('registers a callback with the dispatcher', () => {
     expect(NewsDispatcher.register.mock.calls.length).toBe(1);
