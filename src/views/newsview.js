@@ -60,7 +60,7 @@ class NewsView extends Component {
   render() {
     const { match } = this.props;
     const sort = match.params.sort.split(',');
-    const option = sort.map(type => <option value={type} > {type} </option>);  
+    const option = sort.map(type => <option value={type} > {type} </option>);
     return (
       <div>
         <div>
@@ -111,7 +111,7 @@ NewsView.propTypes = {
   match: PropTypes.routes,
 };
 NewsView.defaultProps = {
-  match: null,
+  match: { params: { sort: 'top' } },
 };
 
 export default NewsView;
