@@ -12,7 +12,6 @@
     "npm": "3.10.10"
   },
   "scripts": {
-
     "test": "nyc --extension .jsx --reporter=html --reporter=text ./node_modules/mocha/bin/_mocha test/testSetup.js test/*test.js",
     "coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
     "watch": "webpack --watch",
@@ -22,7 +21,7 @@
     "serve": "serve ./public",
     "start": "babel-node server.js",
     "covercheck": "nyc report --reporter=text-lcov > lcov.info",
-   "codeclimate": "CODECLIMATE_REPO_TOKEN=e2bd0699fb624a167a4843950c836b89c21da1d5489406d0342c0dd36fb27d80 codeclimate-test-reporter < lcov.info"
+    "codeclimate": "CODECLIMATE_REPO_TOKEN=e2bd0699fb624a167a4843950c836b89c21da1d5489406d0342c0dd36fb27d80 codeclimate-test-reporter < lcov.info"
   },
   "author": "Chibueze Uchendu",
   "license": "MIT",

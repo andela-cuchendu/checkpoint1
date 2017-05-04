@@ -62,7 +62,7 @@ class NewsSourcesView extends Component {
     .indexOf(this.state.search.toLowerCase()) !== -1);
 
     return (
-      <div>
+      <div className="sss">
         <div className="searchBar">
           <InputGroup>
             <Input
