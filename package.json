@@ -17,7 +17,7 @@
     "watch": "webpack --watch",
     "build": "webpack -p",
     "dev": "webpack -d --watch",
-    "prestart": "webpack -p",
+    "deploy": "webpack -p && npm start",
     "serve": "serve ./public",
     "start": "babel-node server.js",
     "covercheck": "nyc report --reporter=text-lcov > lcov.info",
