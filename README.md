@@ -41,6 +41,7 @@ CLone the [latest pre-built release](https://github.com/joemccann/dillinger/rele
 Install the dependencies and start the server.
 
 ```sh
+$ git clone https://github.com/andela-cuchendu/checkpoint1.git
 $ cd checkpoint1
 $ npm install -d
 $ npm start
