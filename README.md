@@ -1,14 +1,10 @@
-# Pair - Jax News Feed
+# Jax News Feed
 
 [![N|Solid](https://cdn.movemeback.com/companies/b61896af09dc4797._small.png?cbust=ChangeMeIfWantToResetImageCaching)](https://andela.com)
 
 
 [![Test Coverage](https://codeclimate.com/github/andela-cuchendu/checkpoint1/badges/coverage.svg)](https://codeclimate.com/github/andela-cuchendu/checkpoint1/coverage)
 [![Code Climate](https://codeclimate.com/github/andela-cuchendu/checkpoint1/badges/gpa.svg)](https://codeclimate.com/github/codeclimate/codeclimate)
-
-
-Jax News Feed App.
-
 
 
 ### What the project does
@@ -23,14 +19,14 @@ Jax News Feed App.
 ### Why the project is useful
   -This is useful as users do not have to remember all their favorite news sources URL.
 
-### Tech
+### Key Dependencies
 
-JNF (Jax News Feed)  uses a number of open source projects to work properly:
-* [GoogleAuth] - Google Authenticator is an application that implements two-step verification services.
-* [Flux] - Complements React's composable view components by utilizing a unidirectional data flow
-* [React] - React makes it painless to create interactive UIs
-* [node.js] - evented I/O for the backend
-* [Express] - fast node.js network app framework [@tjholowaychuk]
+JNF (Jax News Feed)  uses a number of projects to work properly:
+* GoogleAuth - Google Authenticator is an application that implements two-step verification services.
+* Flux - Complements React's composable view components by utilizing a unidirectional data flow
+* React - React makes it painless to create interactive UIs
+* node.js - evented I/O for the backend
+* Express - fast node.js network app framework [@tjholowaychuk]
 
 ### Installation
 
@@ -53,10 +49,10 @@ For production environments...
 
 ### Contributors & Links
 ```
-   [chibujax]: <https://github.com/andela-cuchendu/>
-   [node.js]: <http://nodejs.org>
-   [express]: <http://expressjs.com>
-   [flux]: <https://facebook.github.io/flux/>
-   [google-auth]: <https://github.com/google/google-authenticator>
-   [react]: <https://facebook.github.io/react/>
+   chibujax: <https://github.com/andela-cuchendu/>
+   node.js: <http://nodejs.org>
+   express: <http://expressjs.com>
+   flux: <https://facebook.github.io/flux/>
+   google-auth: <https://github.com/google/google-authenticator>
+   react: <https://facebook.github.io/react/>
 ```
