@@ -1,7 +1,7 @@
 # Pair - Jax News Feed
 
 [![N|Solid](https://cdn.movemeback.com/companies/b61896af09dc4797._small.png?cbust=ChangeMeIfWantToResetImageCaching)](https://andela.com)
-
+[![Test Coverage](https://codeclimate.com/github/andela-cuchendu/checkpoint1/badges/coverage.svg)](https://codeclimate.com/github/andela-cuchendu/checkpoint1/coverage)
 Jax News Feed App.
 
 
@@ -17,11 +17,6 @@ Jax News Feed App.
 
 ### Why the project is useful
   -This is useful as users do not have to remember all their favorite news sources URL.
-
-### How users can get started with the project
-  - Requirements
-  - How to setup the project/Installation/Configuration
-  - How to run tests
 
 ### Tech
 
