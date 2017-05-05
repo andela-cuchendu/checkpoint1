@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import createHistory from 'history/createBrowserHistory';
-//import logo from './img/logo.svg';
 import './scss/App.scss';
 import user from '../model/user';
 import GoogleButton from './googlebutton';
@@ -26,7 +25,9 @@ class Login extends Component {
         <p className="App-intro">
           To get started, click on the button below to sign in with Google+
         </p>
-        <GoogleButton />
+        <div className="wrapper">
+          <GoogleButton />
+        </div>
       </div>
     );
   }
