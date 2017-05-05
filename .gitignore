@@ -3,6 +3,5 @@
 node_modules/
 npm-debug.log
 .vscode/
-public/
 coverage/
 .nyc_output/
