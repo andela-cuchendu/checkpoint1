@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import expect from 'expect';
-import Notfound from '../src/views/notfound';
+import Notfound from '../../src/components/notfound';
 
 describe('Not Found Component', () => {
   const wrapper = shallow(<Notfound />);

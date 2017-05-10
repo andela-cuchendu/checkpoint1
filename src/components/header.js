@@ -6,28 +6,27 @@ import '../../public/style.scss';
 
 import user from '../model/user';
 
+/**
+ * Class representing a menu
+ * @extends Component
+ */
 export default class Menu extends Component {
+
+  /* class constructor */
   constructor(props) {
     super(props);
+    this.state = {};
+  }
 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false,
-    };
-  }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
-  }
+  /* Render the menu deoending on user status */
   render() {
-    if (user.isLogin) {
+    if (user.isLoggedin) {
       return (
         <div className="newsBar">
           <Navbar toggleable>
-            <NavbarToggler right onClick={this.toggle} />
+            <NavbarToggler right />
             <NavbarBrand className="navBrand" href="/">Home</NavbarBrand>
-            <Collapse isOpen={this.state.isOpen} navbar>
+            <Collapse navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
                   <NavLink exact activeClassName="active" to="/logout">Logout</NavLink>

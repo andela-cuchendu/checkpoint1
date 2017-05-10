@@ -1,6 +1,7 @@
 import createHistory from 'history/createBrowserHistory';
 import React, { Component } from 'react';
-import { InputGroup, Input, Card, CardText, CardTitle, CardSubtitle, Row, Col } from 'reactstrap';
+import { InputGroup, Input, Card, CardText,
+  CardTitle, CardSubtitle, Row, Col } from 'reactstrap';
 import NewsSourcesStore from '../stores/NewsSourcesStore';
 import NewsActions from '../actions/NewsActions';
 import '../../public/style.scss';
@@ -11,58 +12,82 @@ const history = createHistory({
   forceRefresh: true,
 });
 
-class NewsSourcesView extends Component {
+/**
+ * Class for NewsSources component
+ * @extends Component
+ */
+class NewsSources extends Component {
+
+/* Set component state */
   constructor() {
     super();
     this.state = {
       sources: [],
       search: '',
+      newsError: '',
     };
     this.getItemsState = this.getItemsState.bind(this);
-    this.onChange2 = this.onChange2.bind(this);
+    this.sourcesChange = this.sourcesChange.bind(this);
     this.updateSearch = this.updateSearch.bind(this);
   }
+
+  /* @return {getItemsState} The The component state.*/
   getInitialState() {
     return this.getItemsState();
   }
 
+/* Push user to login page if not logged in */
   componentWillMount() {
-    if (!user.isLogin) {
+    if (!user.isLoggedin) {
       history.push('/login');
     }
   }
+
+/* Add listener and get sources*/
   componentDidMount() {
-    NewsSourcesStore.addChangeListener(this.onChange2);
+    NewsSourcesStore.addChangeListener(this.sourcesChange);
     NewsActions.getSources();
   }
 
-  onChange2() {
-    const itemState = this.getItemsState();
-    this.setState({
-      sources: itemState.sources || [],
-    });
-  }
-
+/* Get Item state including error */
   getItemsState() {
     return {
       sources: NewsSourcesStore.getAll(),
+      newsError: '',
     };
   }
 
-  componentWillUnMount() {
-    NewsSourcesStore.removeChangeListener(this.onChange2);
+/* Called when sources change */
+  sourcesChange() {
+    const itemState = this.getItemsState();
+    this.setState({
+      sources: itemState.sources || [],
+      newsError: NewsSourcesStore.getError(),
+    });
   }
 
+/* Remove change listener */
+  componentWillUnMount() {
+    NewsSourcesStore.removeChangeListener(this.sourcesChange);
+  }
+
+/* Update view with search result */
   updateSearch(event) {
     this.setState({ search: event.target.value });
   }
 
   render() {
-    const filteredSources = this.state.sources.filter(source => source.title.toLowerCase()
-    .indexOf(this.state.search.toLowerCase()) !== -1);
-
+    const filteredSources = this.state.sources
+      .filter(source => source.title.toLowerCase()
+      .indexOf(this.state.search.toLowerCase()) !== -1);
+    let renderError = '';
+    if (this.state.newsError !== '') {
+      renderError = (<div className="alert alert-danger">
+        <strong>Error!</strong> { this.state.newsError }
+      </div>);
+    }
     return (
-      <div className="sss">
+      <div className="searchContainer">
         <div className="searchBar">
           <InputGroup>
             <Input
@@ -71,13 +96,13 @@ class NewsSourcesView extends Component {
             />
           </InputGroup>
         </div>
-
+        { renderError }
         <Row>
           {filteredSources.map(source => (
-            <Col className="tile" sm="6" xs="6" >
+            <Col className="tile" sm="6" xs="12" >
               <a href={`${source.href}&${source.sortBysAvailable}`} >
                 <Card
-                  block className="bl" color="info"
+                  block className="below" color="info"
                   inverse key={source.id}
                 >
                   <CardTitle>{source.title}</CardTitle>
@@ -94,4 +119,4 @@ class NewsSourcesView extends Component {
   }
 }
 
-export default NewsSourcesView;
+export default NewsSources;

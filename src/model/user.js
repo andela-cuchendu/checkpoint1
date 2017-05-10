@@ -1,43 +1,76 @@
 import Cookies from 'js-cookie';
 
+/**
+ * Class for User model
+ */
 class User {
+
+  /**
+   * Checks if user is logged in
+   */
   constructor() {
     this.userDetails = Cookies.get('mynewsapp') === undefined ? undefined : JSON.parse(Cookies.get('mynewsapp'));
-    this.isLogin = this.isLoggedIn();
+    this.isLoggedin = this.LoggedIn();
     this.name = '';
     this.imageUrl = '';
     this.email = '';
     this.assignUserValues();
   }
+
+  /**
+   * Login a user
+   * @param {*} context
+   */
   Login(context) {
     Cookies.set('mynewsapp', {
       name: context.ig,
       email: context.U3,
       imageUrl: context.Paa,
     });
-    this.isLogin = true;
+    this.isLoggedin = true;
     this.userDetails = context;
     this.assignUserValues();
   }
-  isLoggedIn() {
+
+  /**
+   * Checks if user is logged in
+   * @return {boolean} returns user login status
+   */
+
+  LoggedIn() {
     return !(this.userDetails === undefined);
   }
+
+  /**
+   * Assigns user details
+   */
+
   assignUserValues() {
-    if (this.isLogin) {
+    if (this.isLoggedin) {
       this.favorites = this.userDetails.favorites;
       this.name = this.userDetails.name;
       this.email = this.userDetails.email;
       this.imageUrl = this.userDetails.imageUrl;
     }
   }
+
+  /**
+   * Removes user details
+   */
+
   removeUserValues() {
     delete this.favorites;
     delete this.name;
     delete this.email;
     delete this.imageUrl;
   }
+
+  /**
+   * Logs user our
+   */
+
   logOut() {
-    this.isLogin = false;
+    this.isLoggedin = false;
     Cookies.remove('mynewsapp');
     this.removeUserValues();
   }

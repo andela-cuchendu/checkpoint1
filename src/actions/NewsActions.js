@@ -8,7 +8,6 @@ import Api from '../utils/Api';
 const NewsActions = {
 
   getNews: (source) => {
-    Api.resetQuery();
     Api.addQuery('source', source);
     axios(Api.getLink()).then((response) => {
       const feeds = new NewsContainer(); // initialize variable to news features
@@ -19,19 +18,20 @@ const NewsActions = {
           feeds.add(article.title, article.description, article.author,
           article.url, article.urlToImage);
         });
-
         NewsDispatcher.dispatch({
           eventName: NewsActionTypes.GET_NEWS,
           news: feeds.get(),
         });
       }
-    }).catch((error) => {
-      console.log(error);
+    }).catch((errors) => {
+      NewsDispatcher.dispatch({
+        eventName: NewsActionTypes.GET_ERROR,
+        error: errors,
+      });
     });
   },
 
   getSources: () => {
-    Api.resetQuery();
     const dataFeatures = new SourcesContainer();
     axios.get(Api.apilink).then((response) => {
       if (response.status === 200) {
@@ -47,8 +47,11 @@ const NewsActions = {
           newItem: dataFeatures.get(),
         });
       }
-    }).catch((error) => {
-      console.log(error);
+    }).catch((errors) => {
+      NewsDispatcher.dispatch({
+        eventName: NewsActionTypes.GET_ERROR,
+        error: errors,
+      });
     });
   },
 };

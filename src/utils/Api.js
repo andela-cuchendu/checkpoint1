@@ -2,22 +2,17 @@ import axios from 'axios';
 
 class Api {
   constructor() {
-    this.apiKey = '213327409d384371851777e7c7f78dfe';
-    this.linkString = 'https://newsapi.org/v1/articles?';
+    this.apiKey = process.env.apiKey;
+    this.newsLink = 'https://newsapi.org/v1/articles?';
     this.apilink = 'https://newsapi.org/v1/sources?language=en';
-    this.link = this.linkString;
-    this.num_query = 0;
+    this.link = this.newsLink;
     this.result = [];
     this.hasError = false;
     this.errorMessage = '';
   }
 
   addQuery(type, value) {
-    this.link += `&${type}=${value}&apiKey=${this.apiKey}`;
-  }
-
-  resetQuery() {
-    this.link = this.linkString;
+    this.link = `${this.newsLink}&${type}=${value}&apiKey=${this.apiKey}`;
   }
 
   getLink() {

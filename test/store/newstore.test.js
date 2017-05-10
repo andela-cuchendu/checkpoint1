@@ -2,9 +2,9 @@ import React from 'react';
 import { mount } from 'enzyme';
 import expect from 'expect';
 
-import newsStore from '../src/stores/NewsStore';
-import NewsActionTypes from '../src/constants/NewsActionTypes';
-import NewsDispatcher from '../src/dispatcher/NewsDispatcher';
+import newsStore from '../../src/stores/NewsStore';
+import NewsActionTypes from '../../src/constants/NewsActionTypes';
+import NewsDispatcher from '../../src/dispatcher/NewsDispatcher';
 
 
 describe('NewsStore', () => {

@@ -15,6 +15,7 @@
   - Search Through the News Sorces. 
   - View News Headlines from any of the sources.
   - Read News
+  - Share to Facebook, linkedin, Google+, Twitter
 
 ### Why the project is useful
   -This is useful as users do not have to remember all their favorite news sources URL.

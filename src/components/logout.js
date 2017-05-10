@@ -7,9 +7,15 @@ const history = createHistory({
   forceRefresh: true,
 });
 
+/**
+ * Class for logout component
+ * @extends Component
+ */
 class Logout extends Component {
+
+/* logout user */
   componentWillMount() {
-    if (user.isLogin) {
+    if (user.isLoggedin) {
       user.logOut();
       history.push('/login');
     } else {

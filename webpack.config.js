@@ -1,4 +1,5 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 const BUILD_PATH = path.resolve(__dirname, 'public');
 const APP_DIR = path.resolve(__dirname);
@@ -34,5 +35,11 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new Dotenv({
+      path: './.env',
+      safe: false,
+    }),
+  ],
 };
 

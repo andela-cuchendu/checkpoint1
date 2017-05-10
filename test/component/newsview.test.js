@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import expect from 'expect';
-import NewsView from '../src/views/newsview';
-describe('NewsView Component', () => {
+import News from '../../src/components/news';
+describe('News Component', () => {
   const allItems = 
   {
     "status": "ok",
@@ -29,13 +29,13 @@ describe('NewsView Component', () => {
   };
   let wrapper;
   const sort = {params: {sort: 'top'} }
-    wrapper = mount(<NewsView sort={sort}/>);
+    wrapper = mount(<News sort={sort}/>);
   it('Should allows us to set props', () => {
     expect(wrapper.node.props.allItems).toBe(undefined);
     wrapper.setProps({ allItems: allItems });
     expect(wrapper.node.props.allItems).toEqual(allItems);
   });
-  it('NewsView renders Input', () => {
+  it('News renders Input', () => {
     const input = wrapper.find('#exampleSelect').first();
     expect(input).toExist;
     expect(input.length).toEqual(1);

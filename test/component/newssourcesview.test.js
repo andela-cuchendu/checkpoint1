@@ -1,14 +1,14 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import expect from 'expect';
-import NewsSourcesView from '../src/views/newssourcesview';
+import NewsSources from '../../src/components/newssources';
 
-describe('NewsSourcesView Component', () => {
+describe('NewsSources Component', () => {
   
   let wrapper;
   const sources= ['Plenty news', 'NTA'];
   beforeEach(() => {
-    wrapper = mount(<NewsSourcesView sources ={[]} />);
+    wrapper = mount(<NewsSources sources ={[]} />);
   });
  
   it('SourcesView renders Input', () => {
@@ -26,7 +26,7 @@ describe('NewsSourcesView Component', () => {
   });
 
   it('should render a node with className searchBar', () => {
-    const component = shallow(<NewsSourcesView />);
+    const component = shallow(<NewsSources />);
     expect(component.find('.searchBar').length).toBe(1);
   })
 });

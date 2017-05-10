@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+.news-frame .headline {
+    height: 100%;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -15,7 +17,11 @@
 }
 
 .App-intro {
-  font-size: large;
+  font-size: medium;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 @keyframes App-logo-spin {
@@ -23,7 +29,12 @@
   to { transform: rotate(360deg); }
 }
 .Demo__some-network {
-        display: inline-block;
-        margin-right: 15px;
-        text-align: center;
-        }
+  display: inline-block;
+  margin-right: 15px;
+  text-align: center;
+}
+.wrapper{
+  margin-left: 35%;
+  border: 2px solid #fff;
+  z-index: 0;
+	}
