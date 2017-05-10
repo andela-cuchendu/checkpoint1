@@ -5,16 +5,20 @@
 
 [![Test Coverage](https://codeclimate.com/github/andela-cuchendu/checkpoint1/badges/coverage.svg)](https://codeclimate.com/github/andela-cuchendu/checkpoint1/coverage)
 [![Code Climate](https://codeclimate.com/github/andela-cuchendu/checkpoint1/badges/gpa.svg)](https://codeclimate.com/github/codeclimate/codeclimate)
+[![Coverage Status](https://coveralls.io/repos/github/andela-cuchendu/checkpoint1/badge.svg?branch=develop)](https://coveralls.io/github/andela-cuchendu/checkpoint1?branch=develop)
 
 
 ### What the project does
-  - This app gives you the global view of news by fetching news sources. User selects source and have the headlines listed.
+  - Jax News App is a simple and easy-to-use App that returns headlines currently published on a range of news sources and blogs (70 and counting so far).
+
+ - Use it to display live news headlines and images and read in your browsers!This app gives you the global view of news by fetching news sources. User selects source and have the headlines listed.
 
 ### Features
   - View Different News Sources.
   - Search Through the News Sorces. 
   - View News Headlines from any of the sources.
   - Read News
+  - Share to Facebook, linkedin, Google+, Twitter
 
 ### Why the project is useful
   -This is useful as users do not have to remember all their favorite news sources URL.
