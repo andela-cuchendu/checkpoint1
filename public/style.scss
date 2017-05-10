@@ -1,107 +1,135 @@
 .tile{
-    
-    .bl{
-        height:250px;
-        margin:60px 30px 25px 30px;
-    }
+  
+  .below{
+    height:90%;
+    margin:60px 30px 25px 30px;
+  }
 }
 
 $search: #000000 2px solid;
 
 .searchBar{
-    width: 250px;
-    margin:auto;
-    margin-top: 40px;
+  width: 250px;
+  margin:auto;
+  margin-top: 40px;
 
-    .input{
-        border: $search;
-    }
+  .input{
+    border: $search;
+  }
 
-    .button{
-       border: $search; 
-    }
-   
+  .button{
+    border: $search; 
+  }
+  
 }
 
 $text-color: #ffffff;
 .newsBar{
-    background-color: #000000;
+  background-color: #000000;
 
-    .navBrand{
-        color: $text-color;
-    }
+  .navBrand{
+    color: $text-color;
+  }
 
-    .home{
-        color: $text-color;
-    }
+  .home{
+    color: $text-color;
+  }
 }
 
 .active{
-    font-weight: bold
+  font-weight: bold
 }
 
 .ml-auto{
-    a{
-        text-decoration: none;
-        color:#ffffff;
-    }
-}
-
-h1{
-    text-transform: uppercase;
-    margin: -8px 0 0 200px;
+  a{
+    text-decoration: none;
+    color:#ffffff;
+  }
 }
 
 .order{
-    margin-right: 60px;
-    width: 250px;
+  margin-right: 60px;
+  width: 250px;
 
-    select{
-        border: #000000 2px solid;
-    }
+  select{
+      border: #000000 2px solid;
+  }
 }
 
 $color: #000000;
 $margin-top: 60px;
 
 div{
-    .left{
-        float:left;
-        color: $color;
-        margin-top: $margin-top;
-    }
-    .right{
-        float: right;
-        margin-top: 60px;
-    }
+  .left{
+    float:left;
+    color: $color;
+    margin-top: $margin-top;
+  }
+  .right{
+    float: right;
+    margin-top: 60px;
+  }
 }
 
 .clear{
-    clear:both;
+  clear:both;
 }
 
 .news-frame{
-    margin: 50px 0 90px 70px;
-    .headline{
-        height: 650px;
+  margin: 50px 0 90px 70px;
+  .headline{
+      height: 650px;
 
-    }
+  }
 
 }
 
 .title{
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .subtitle{
-    font-size: 10px;
-    font-style: italic;
+  font-size: 10px;
+  font-style: italic;
 }
 .logobtn{
-    width: 250px;
-    margin:auto;
+  width: 250px;
+  margin:auto;
 }
 .card-info {
-    background-color: #7f7f7f;
-    border-color: #5bc0de;
+  background-color: #7f7f7f;
+  border-color: #5bc0de;
+}
+.abcRioButtonBlue {
+  background-color: #4285f4;
+  border: none;
+  color: #fff;
+  height: 50px !important;
+  width: 220px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.back{
+  margin-left: auto;
+  margin-right: auto;
+  border: solid;
+}
+.backwrapper{
+  display: block;
+  text-align: center;
+  margin-top: 30px;  
+}
+.sort{
+  float: left;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+h1 {
+    text-transform: uppercase;
+    margin: -8px 0 0 20px;
 }

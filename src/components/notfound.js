@@ -1,4 +1,4 @@
-import createHistory, {DOM} from 'history/createBrowserHistory';
+import createHistory from 'history/createBrowserHistory';
 import React, { Component } from 'react';
 // import logo from './img/logo.svg';
 import './scss/App.scss';
@@ -10,9 +10,15 @@ const history = createHistory({
   forceRefresh: true,
 });
 
+/**
+ * Class for NotFound component
+ * @extends Component
+ */
 class NotFound extends Component {
+
+/* Push user to login page if not logged in */
   componentWillMount() {
-    if (!user.isLogin) {
+    if (!user.isLoggedin) {
       history.push('/login');
     }
   }

@@ -7,19 +7,29 @@ const history = createHistory({
   forceRefresh: true,
 });
 let userClick = false;
-let Parent = null; // For gapi to access rhis component
+let Parent = null; // For gapi to access this component
 
+/**
+ * Class for google button
+ * @extends Component
+ */
 class GoogleButton extends Component {
+/* bind onSiginIn function */
   constructor() {
     super();
     Parent = this; // Assign this to Parent for gapi to access callback
     this.onSignIn = this.onSignIn.bind(this);
   }
 
+/** Add event listener to the google button */
   componentDidMount() {
     window.addEventListener('google-loaded', this.renderGoogleLoginButton);
   }
 
+/**
+ * Saves user details and redirect to landin page
+ * @param {*} googleUser
+ */
   onSignIn(googleUser) {
     const w3 = googleUser.getBasicProfile();
     if (userClick === true) {
@@ -28,10 +38,16 @@ class GoogleButton extends Component {
     }
   }
 
+/**
+ * Ensures the google button is clicked.
+ */
   onClick() {
     userClick = true;
   }
 
+/**
+ * Render the google button
+ */
   renderGoogleLoginButton() {
     gapi.signin2.render('my-signin2', {
       scope: 'https://www.googleapis.com/auth/plus.login',

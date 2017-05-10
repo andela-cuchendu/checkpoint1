@@ -14,7 +14,14 @@ const TwitterIcon = generateShareIcon('twitter');
 const GooglePlusIcon = generateShareIcon('google');
 const LinkedinIcon = generateShareIcon('linkedin');
 let shareUrl;
+
+/**
+ * Class for Share component
+ * @extends Component
+ */
 class Share extends Component {
+
+/* Set component state and props */
   constructor(props) {
     super(props);
     shareUrl = null;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import expect from 'expect';
-import App from '../src/App';
+import App from '../../src/App';
 
 describe('Main component with menu container Test via Enzyme', () => {
   const wrapper = shallow(<App />);

@@ -1,5 +1,5 @@
 import expect from 'expect';
-import User from '../src/model/user';
+import User from '../../src/model/user';
 
 const loginDetails = { name: 'Chibu Jax', email: 'chibujax@gmial.com', imageUrl: 'jaximg.png', favorites: {} };
 
@@ -7,7 +7,7 @@ describe('User Model', () => {
 
   it('should log user in when values is supplied and store it', () => {
     User.Login(loginDetails);
-    expect(User.isLoggedIn()).toBe(true);
+    expect(User.isLoggedin).toBe(true);
   });
 
   it('should return Chibu Jax as the name of the logged in user', () => {
@@ -24,7 +24,7 @@ describe('User Model', () => {
 
   it('should Remove all user details on logout', () => {
     User.logOut();
-    expect(User.isLogin).toBe(false);
+    expect(User.isLoggedin).toBe(false);
   });
   it('should be undefined for user name', () => {
     expect(User.name).toBe(undefined);

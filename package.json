@@ -12,7 +12,7 @@
     "npm": "3.10.10"
   },
   "scripts": {
-    "test": "nyc --extension .jsx --reporter=html --reporter=text ./node_modules/mocha/bin/_mocha test/testSetup.js test/*test.js",
+    "test": "nyc --extension .jsx --reporter=html --reporter=text ./node_modules/mocha/bin/_mocha test/testSetup.js test/**/*test.js",
     "coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
     "watch": "webpack --watch",
     "build": "webpack -p",
@@ -35,7 +35,8 @@
     "babel-register": "^6.24.1",
     "bootstrap": "^4.0.0-alpha.6",
     "chai": "^3.5.0",
-    "css-loader": "^0.28.0",   
+    "css-loader": "^0.28.0",
+    "dotenv-webpack": "^1.4.5",
     "express": "^4.15.2",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
@@ -59,8 +60,8 @@
     "react-share": "^1.13.2",
     "react-tap-event-plugin": "^2.0.1",
     "reactstrap": "^4.5.0",
-    "sass-loader": "^6.0.3", 
-    "style-loader": "^0.16.1",   
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
     "webpack": "^2.3.3"
   },
   "devDependencies": {
