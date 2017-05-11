@@ -2,7 +2,8 @@ import axios from 'axios';
 
 class Api {
   constructor() {
-    this.apiKey = process.env.apiKey;
+    this.apiKey = process.env.apiKey || '213327409d384371851777e7c7f78dfe';
+    console.log(process.env, 'my api');
     this.newsLink = 'https://newsapi.org/v1/articles?';
     this.apilink = 'https://newsapi.org/v1/sources?language=en';
     this.link = this.newsLink;

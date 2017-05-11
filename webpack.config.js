@@ -5,7 +5,7 @@ const BUILD_PATH = path.resolve(__dirname, 'public');
 const APP_DIR = path.resolve(__dirname);
 
 const envsDefinePlugin = new webpack.DefinePlugin({
-  'process.env.apiKey': JSON.stringify(process.env.APIKEY),
+  'process.env.apiKey': JSON.stringify(process.env.apiKey),
 });
 
 module.exports = {
