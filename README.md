@@ -8,7 +8,9 @@
 
 
 ### What the project does
-  - This app gives you the global view of news by fetching news sources. User selects source and have the headlines listed.
+  - Jax News App is a simple and easy-to-use App that returns headlines currently published on a range of news sources and blogs (70 and counting so far).
+
+ - Use it to display live news headlines and images and read in your browsers!This app gives you the global view of news by fetching news sources. User selects source and have the headlines listed.
 
 ### Features
   - View Different News Sources.

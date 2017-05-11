@@ -1,8 +1,12 @@
 const path = require('path');
-const Dotenv = require('dotenv-webpack');
+const webpack = require('webpack');
 
 const BUILD_PATH = path.resolve(__dirname, 'public');
 const APP_DIR = path.resolve(__dirname);
+
+const envsDefinePlugin = new webpack.DefinePlugin({
+  'process.env.apiKey': JSON.stringify(process.env.APIKEY),
+});
 
 module.exports = {
   devtool: 'cheap-eval-source-map',
@@ -36,10 +40,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new Dotenv({
-      path: './.env',
-      safe: false,
-    }),
+    envsDefinePlugin,
   ],
 };
 
