@@ -5,7 +5,7 @@ import expect from 'expect';
 import NewsSourcesStore from '../../src/stores/NewsSourcesStore';
 import NewsActionTypes from '../../src/constants/NewsActionTypes';
 import NewsDispatcher from '../../src/dispatcher/NewsDispatcher';
-import SourcesDataSource from '../dataStore/SourcesDataSource';
+import NewsData from '../data/SourcesData';
 
 
 describe('NewsSourcesStore', () => {
@@ -22,9 +22,9 @@ describe('NewsSourcesStore', () => {
   it('Should have empty sources', () => {
     NewsDispatcher.dispatch({
       eventName: NewsActionTypes.GET_SOURCES,
-      newItem: SourcesDataSource,
+      newItem: NewsData,
     });
     const expected = NewsSourcesStore.getAll();
-    expect(expected).toEqual(SourcesDataSource);
+    expect(expected).toEqual(NewsData);
   });
 });

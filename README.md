@@ -5,7 +5,8 @@
 
 [![Test Coverage](https://codeclimate.com/github/andela-cuchendu/checkpoint1/badges/coverage.svg)](https://codeclimate.com/github/andela-cuchendu/checkpoint1/coverage)
 [![Code Climate](https://codeclimate.com/github/andela-cuchendu/checkpoint1/badges/gpa.svg)](https://codeclimate.com/github/codeclimate/codeclimate)
-[![Coverage Status](https://coveralls.io/repos/github/andela-cuchendu/checkpoint1/badge.svg?branch=develop)](https://coveralls.io/github/andela-cuchendu/checkpoint1?branch=develop)
+[![Build Status](https://travis-ci.org/andela-cuchendu/checkpoint1.svg?branch=master)](https://travis-ci.org/andela-cuchendu/checkpoint1)
+
 
 
 ### What the project does

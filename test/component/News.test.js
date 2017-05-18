@@ -2,7 +2,7 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import expect from 'expect';
 import News from '../../src/components/news';
-import allItems from '../datastore/newsdatasource.js';
+import allItems from '../data/NewsData';
 
 describe('News Component', () => {
   let wrapper;
