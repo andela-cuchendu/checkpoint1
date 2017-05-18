@@ -1,9 +1,10 @@
 language: node_js
 
+dist: trusty
+sudo: required
 node_js:
   - 6.10.1
 before_script:
-  - sudo apt-get install gcc-4.8 g++-4.8
   - npm install
 script: 
   - npm test
