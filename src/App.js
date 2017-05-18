@@ -2,7 +2,7 @@ import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import Header from './components/header';
-import Logout from './components/Logout';
+import Logout from './components/logout';
 import NewsSources from './components/newssources';
 import News from './components/news';
 import Login from './components/login';
