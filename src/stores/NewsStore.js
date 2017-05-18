@@ -27,10 +27,6 @@ const NewsStore = assign({}, EventEmitter.prototype, {
   },
 
 /**
-* @param {function} callback
-*/
-
-/**
 * Register callback
 * @param {function} callback
 */
@@ -48,6 +44,9 @@ const NewsStore = assign({}, EventEmitter.prototype, {
 
 });
 
+/**
+ * Register listener
+ */
 NewsDispatcher.register((payload) => {
   switch (payload.eventName) {
 

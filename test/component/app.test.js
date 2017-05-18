@@ -10,6 +10,6 @@ describe('Main component with menu container Test via Enzyme', () => {
   });
 
   it('should have a `Menu` children componet', () => {
-    expect(wrapper.find('Menu').length).toBeGreaterThanOrEqualTo(1);
+    expect(wrapper.find('Header').length).toBeGreaterThanOrEqualTo(1);
   });
 });

@@ -60,6 +60,10 @@ class GoogleButton extends Component {
     });
   }
 
+/**
+ * Renders component
+ * @return {ReactElement}
+ */
   render() {
     return (
       <div id="my-signin2" onClick={this.onClick} role="button" >Sign in with google</div>

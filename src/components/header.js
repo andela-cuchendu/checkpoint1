@@ -10,7 +10,7 @@ import user from '../model/user';
  * Class representing a menu
  * @extends Component
  */
-export default class Menu extends Component {
+export default class Header extends Component {
 
   /* class constructor */
   constructor(props) {
@@ -18,7 +18,12 @@ export default class Menu extends Component {
     this.state = {};
   }
 
-  /* Render the menu deoending on user status */
+
+/**
+ * Renders component
+ * @return {ReactElement}
+ * Render the menu deoending on user status
+ */
   render() {
     if (user.isLoggedin) {
       return (

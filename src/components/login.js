@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import createHistory from 'history/createBrowserHistory';
 import './scss/App.scss';
 import user from '../model/user';
-import GoogleButton from './googlebutton';
+import GoogleButton from './GoogleButton';
 
 const history = createHistory({
   forceRefresh: true,
@@ -20,6 +20,11 @@ class Login extends Component {
       history.push('/');
     }
   }
+
+/**
+ * Renders component
+ * @return {ReactElement}
+ */
   render() {
     return (
       <div className="App">

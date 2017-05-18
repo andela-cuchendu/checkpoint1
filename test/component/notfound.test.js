@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import expect from 'expect';
-import Notfound from '../../src/components/notfound';
+import NotFound from '../../src/components/NotFound';
 
 describe('Not Found Component', () => {
-  const wrapper = shallow(<Notfound />);
+  const wrapper = shallow(<NotFound />);
   it('should render a `App` element', () => {
       expect(wrapper.node.props.className).toBe('App');
   });

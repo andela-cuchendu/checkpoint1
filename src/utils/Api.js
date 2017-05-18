@@ -1,5 +1,8 @@
 import axios from 'axios';
 
+/**
+ * Api Class used for making external calls
+ */
 class Api {
   constructor() {
     this.apiKey = process.env.apiKey;
@@ -10,15 +13,26 @@ class Api {
     this.hasError = false;
     this.errorMessage = '';
   }
-
+/**
+ *
+ * @param {*} type
+ * @param {*} value
+ * @return {void}
+ */
   addQuery(type, value) {
     this.link = `${this.newsLink}&${type}=${value}&apiKey=${this.apiKey}`;
   }
 
+/**
+ * @return {void}
+ */
   getLink() {
     return this.link;
   }
 
+/**
+ * @return {void}
+ */
   makeApiCall() {
     axios.get(this.getLink()).then((response) => {
       if (response.status === 200) {

@@ -44,6 +44,9 @@ const NewsSourcesStore = assign({}, EventEmitter.prototype, {
 
 });
 
+/**
+ * Register lsiteners
+ */
 NewsDispatcher.register((payload) => {
   switch (payload.eventName) {
 

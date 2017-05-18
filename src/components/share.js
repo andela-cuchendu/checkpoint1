@@ -26,6 +26,11 @@ class Share extends Component {
     super(props);
     shareUrl = null;
   }
+
+/**
+ * Renders component
+ * @return {ReactElement}
+ */
   render() {
     shareUrl = this.props.share;
     const title = this.props.title;

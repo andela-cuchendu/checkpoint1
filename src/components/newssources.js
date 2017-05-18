@@ -76,6 +76,10 @@ class NewsSources extends Component {
     this.setState({ search: event.target.value });
   }
 
+/**
+ * Renders component
+ * @return {ReactElement}
+ */
   render() {
     const filteredSources = this.state.sources
       .filter(source => source.title.toLowerCase()

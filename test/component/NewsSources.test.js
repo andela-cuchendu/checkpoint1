@@ -1,16 +1,17 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import expect from 'expect';
-import NewsSources from '../../src/components/newssources';
+import NewsSources from '../../src/components/NewsSources';
+import sources from '../dataStore/SourcesDataSource.js';
 
 describe('NewsSources Component', () => {
   
   let wrapper;
-  const sources= ['Plenty news', 'NTA'];
   beforeEach(() => {
     wrapper = mount(<NewsSources sources ={[]} />);
   });
- 
+  let wrapper2 = mount(<NewsSources />);
+  wrapper2.setState({ sources: sources });
   it('SourcesView renders Input', () => {
     const input = wrapper.find('input').first();
     expect(input.length).toEqual(1);
@@ -29,4 +30,10 @@ describe('NewsSources Component', () => {
     const component = shallow(<NewsSources />);
     expect(component.find('.searchBar').length).toBe(1);
   })
+  it('Sources should render state correctly', () => {
+    wrapper.setState({ sources: sources });
+    const newsCard = wrapper.mount().find('.card-title').first();
+    const expected = '<h4 class="card-title">ABC News (AU)</h4>';
+    expect(newsCard.html()).toBe(expected);
+  });    
 });

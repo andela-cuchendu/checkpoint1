@@ -49,7 +49,17 @@ $ npm start
 
 For production environments...
 
+### Limitations
 
+There are limitations with this project. Some of them are:
+
+You cannnot favorite your sources. 
+
+I intend to fix the limitations in future buids.
+
+### License
+
+This project was created by Chibueze Uchendu and is licensed for personal use, modification and distribution is under the MIT license. Feel free to share it!
 
 ### Contributors & Links
 ```

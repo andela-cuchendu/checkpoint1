@@ -1,23 +1,27 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
-import Menu from './components/header';
-import Logout from './components/logout';
-import NewsSources from './components/newssources';
-import News from './components/news';
-import Login from './components/login';
+import Header from './components/Header';
+import Logout from './components/Logout';
+import NewsSources from './components/NewsSources';
+import News from './components/News';
+import Login from './components/Login';
 import user from './model/user';
 
 
-import NotFound from './components/notfound';
+import NotFound from './components/NotFound';
 
 const history = createHistory();
 
+/**
+ * @return {ReactComponent}
+ * Application entry point
+ */
 function App() {
   return (
     <Router history={history} user={user} >
       <div className="secondry">
-        <Menu user={user} />
+        <Header user={user} />
         <Switch>
           <Route component={NewsSources} exact path="/" />
           <Route component={News} exact path="/articles/:id&:sort" />

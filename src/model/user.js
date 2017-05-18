@@ -7,6 +7,7 @@ class User {
 
   /**
    * Checks if user is logged in
+   * @return {void}
    */
   constructor() {
     this.userDetails = Cookies.get('mynewsapp') === undefined ? undefined : JSON.parse(Cookies.get('mynewsapp'));
@@ -20,6 +21,7 @@ class User {
   /**
    * Login a user
    * @param {*} context
+   * @return {void}
    */
   Login(context) {
     Cookies.set('mynewsapp', {
@@ -43,6 +45,7 @@ class User {
 
   /**
    * Assigns user details
+   * @return {void}
    */
 
   assignUserValues() {
@@ -56,8 +59,8 @@ class User {
 
   /**
    * Removes user details
+   * @return {void}
    */
-
   removeUserValues() {
     delete this.favorites;
     delete this.name;
@@ -67,8 +70,8 @@ class User {
 
   /**
    * Logs user our
+   * @return {void}
    */
-
   logOut() {
     this.isLoggedin = false;
     Cookies.remove('mynewsapp');

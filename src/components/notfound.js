@@ -22,6 +22,11 @@ class NotFound extends Component {
       history.push('/login');
     }
   }
+
+/**
+ * Renders component
+ * @return {ReactElement}
+ */
   render() {
     return (
       <div className="App">

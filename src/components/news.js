@@ -4,7 +4,7 @@ import { Form, FormGroup, Input, Card, CardText, CardBlock,
   CardTitle, CardSubtitle, Row, Col } from 'reactstrap';
 import NewsStore from '../stores/NewsStore';
 import NewsActions from '../actions/NewsActions';
-import Share from './share';
+import Share from './Share';
 
 import user from '../model/user';
 
@@ -75,6 +75,10 @@ class News extends Component {
     NewsActions.getNews(`${match.params.id}&sortBy=${sortValue}`);
   }
 
+/**
+ * Renders component
+ * @return {ReactElement}
+ */
   render() {
     const { match } = this.props;
     const sort = match.params.sort.split(',');

@@ -1,16 +1,24 @@
 import axios from 'axios';
 import NewsActionTypes from '../constants/NewsActionTypes';
 import NewsDispatcher from '../dispatcher/NewsDispatcher';
-import SourcesContainer from '../configs/SourcesContainer';
-import NewsContainer from '../configs/NewsContainer';
+import SourcesContainer from '../containers/SourcesContainer';
+import NewsContainer from '../containers/NewsContainer';
 import Api from '../utils/Api';
 
+/**
+ * NewsActions Object
+ */
 const NewsActions = {
 
+/**
+ * getNews Action.
+ * @param {*} source
+ * @return {void}
+ */
   getNews: (source) => {
     Api.addQuery('source', source);
-    axios(Api.getLink()).then((response) => {
-      const feeds = new NewsContainer(); // initialize variable to news features
+    return axios.get(Api.getLink()).then((response) => {
+      const feeds = new NewsContainer();
       const body = response.data;
       if (response.status === 200) {
         const articles = body.articles;
@@ -31,9 +39,13 @@ const NewsActions = {
     });
   },
 
+/**
+ * getSources Action
+ * @return {void}
+ */
   getSources: () => {
     const dataFeatures = new SourcesContainer();
-    axios.get(Api.apilink).then((response) => {
+    return axios.get(Api.apilink).then((response) => {
       if (response.status === 200) {
         const body = response.data;
         const sources = body.sources;
@@ -41,7 +53,6 @@ const NewsActions = {
           dataFeatures.add(source.id, source.name, source.description,
            source.category, source.sortBysAvailable);
         });
-
         NewsDispatcher.dispatch({
           eventName: NewsActionTypes.GET_SOURCES,
           newItem: dataFeatures.get(),

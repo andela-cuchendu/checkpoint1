@@ -2,11 +2,10 @@ import React from 'react';
 import expect from 'expect';
 import { shallow, mount } from 'enzyme';
 import { Route } from 'react-router';
-import Notfound from '../../src/components/logout';
-import header from '../../src/components/header';
+import Header from '../../src/components/Header';
 
 describe('Header component', () => {
-  const wrapper = shallow(<header />);
+  const wrapper = shallow(<Header />);
   it('should have empty props object', () => {
     expect(wrapper.node.props).toEqual({});
   });
