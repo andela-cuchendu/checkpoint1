@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import createHistory from 'history/createBrowserHistory';
 import './scss/App.scss';
 import user from '../model/user';
-import GoogleButton from './GoogleButton';
+import GoogleButton from './googlebutton';
 
 const history = createHistory({
   forceRefresh: true,

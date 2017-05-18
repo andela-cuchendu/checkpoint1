@@ -4,7 +4,7 @@ import { Form, FormGroup, Input, Card, CardText, CardBlock,
   CardTitle, CardSubtitle, Row, Col } from 'reactstrap';
 import NewsStore from '../stores/NewsStore';
 import NewsActions from '../actions/NewsActions';
-import Share from './Share';
+import Share from './share';
 
 import user from '../model/user';
 
