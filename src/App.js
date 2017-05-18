@@ -1,15 +1,15 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
-import Header from './components/Header';
+import Header from './components/header';
 import Logout from './components/Logout';
-import NewsSources from './components/NewsSources';
-import News from './components/News';
-import Login from './components/Login';
+import NewsSources from './components/newssources';
+import News from './components/news';
+import Login from './components/login';
 import user from './model/user';
 
 
-import NotFound from './components/NotFound';
+import NotFound from './components/notfound';
 
 const history = createHistory();
 
