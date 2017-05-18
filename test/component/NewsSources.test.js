@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import expect from 'expect';
-import NewsSources from '../../src/components/NewsSources';
-import sources from '../dataStore/SourcesDataSource.js';
+import NewsSources from '../../src/components/newssources';
+import sources from '../datastore/sourcesdatasource';
 
 describe('NewsSources Component', () => {
   
