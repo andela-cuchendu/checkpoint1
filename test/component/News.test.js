@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import expect from 'expect';
-import News from '../../src/components/News';
-import allItems from '../dataStore/newsdatasource.js';
+import News from '../../src/components/news';
+import allItems from '../datastore/newsdatasource.js';
 
 describe('News Component', () => {
   let wrapper;

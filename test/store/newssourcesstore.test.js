@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  mount
-} from 'enzyme';
+import {mount} from 'enzyme';
 import expect from 'expect';
 
 import NewsSourcesStore from '../../src/stores/NewsSourcesStore';
@@ -11,7 +9,7 @@ import SourcesDataSource from '../dataStore/SourcesDataSource';
 
 
 describe('NewsSourcesStore', () => {
-  const errors = 'we have network error'
+  const errors = 'we have network error';
   it('Should match the expected Error', () => {
     NewsDispatcher.dispatch({
       eventName: NewsActionTypes.GET_ERROR,
