@@ -5,7 +5,7 @@ import { InputGroup, Input, Card, CardText,
 import NewsSourcesStore from '../stores/NewsSourcesStore';
 import NewsActions from '../actions/NewsActions';
 import '../../public/style.scss';
-import user from '../model/user';
+import user from '../model/User';
 
 
 const history = createHistory({

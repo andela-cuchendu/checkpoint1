@@ -1,7 +1,7 @@
 /* global gapi */
 import React, { Component } from 'react';
 import createHistory from 'history/createBrowserHistory';
-import user from '../model/user';
+import user from '../model/User';
 
 const history = createHistory({
   forceRefresh: true,

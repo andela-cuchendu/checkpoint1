@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import createHistory from 'history/createBrowserHistory';
 import './scss/App.scss';
-import user from '../model/user';
-import GoogleButton from './googlebutton';
+import user from '../model/User';
+import GoogleButton from './GoogleButton';
 
 const history = createHistory({
   forceRefresh: true,

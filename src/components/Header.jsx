@@ -4,7 +4,7 @@ from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import '../../public/style.scss';
 
-import user from '../model/user';
+import user from '../model/User';
 
 /**
  * Class representing a menu

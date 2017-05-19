@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // import logo from './img/logo.svg';
 import './scss/App.scss';
 
-import user from '../model/user';
+import user from '../model/User';
 
 
 const history = createHistory({
