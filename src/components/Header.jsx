@@ -7,12 +7,16 @@ import '../../public/style.scss';
 import user from '../model/User';
 
 /**
- * Class representing a menu
+ * Class creates the menu of the application
  * @extends Component
  */
 export default class Header extends Component {
 
-  /* class constructor */
+/**
+ * First set the component state with empty object.
+ * @constructor
+ * @return {void}
+ */
   constructor(props) {
     super(props);
     this.state = {};
@@ -20,9 +24,9 @@ export default class Header extends Component {
 
 
 /**
- * Renders component
- * @return {ReactElement}
- * Render the menu deoending on user status
+ * Renders the menu component depending on user status
+ If user is guest, return null
+ * @return {ReactElement||null}
  */
   render() {
     if (user.isLoggedin) {

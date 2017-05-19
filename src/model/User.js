@@ -1,14 +1,16 @@
 import Cookies from 'js-cookie';
 
 /**
- * Class for User model
+ * This class represents a user
+ * @class User
  */
 class User {
 
-  /**
-   * Checks if user is logged in
-   * @return {void}
-   */
+/**
+ * Initializes the user object.
+ * @constructor
+ * @return {void}
+ */
   constructor() {
     this.userDetails = Cookies.get('mynewsapp') === undefined ? undefined : JSON.parse(Cookies.get('mynewsapp'));
     this.isLoggedin = this.LoggedIn();
@@ -19,7 +21,7 @@ class User {
   }
 
   /**
-   * Login a user
+   * Login a user with the user object.
    * @param {object} context - User object
    * @return {void}
    */
@@ -44,7 +46,7 @@ class User {
   }
 
   /**
-   * Assigns user details
+   * Assigns user details to this class
    * @return {void}
    */
 
@@ -69,7 +71,7 @@ class User {
   }
 
   /**
-   * Logs user our
+   * Log user out
    * @return {void}
    */
   logOut() {

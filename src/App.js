@@ -14,8 +14,8 @@ import NotFound from './components/NotFound';
 const history = createHistory();
 
 /**
+ * Application entry point with routing
  * @return {ReactComponent}
- * Application entry point
  */
 function App() {
   return (

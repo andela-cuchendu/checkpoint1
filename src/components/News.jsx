@@ -12,13 +12,19 @@ const history = createHistory({
   forceRefresh: true,
 });
 
+
+
 /**
- * Class for News component
- * @extends Component
+ * This component represents all fetched news.
+ * @class News
+ * @extends {Component}
  */
 class News extends Component {
 
-/* Get component state*/
+/**
+ * This function returns the news state of the component.
+ * @return {object}
+ */
   static getItemsState() {
     return {
       allItems: NewsStore.getAll(),
@@ -26,7 +32,11 @@ class News extends Component {
     };
   }
 
-/* Set component state */
+/**
+ * Sets the sate of component and bind the onChange and handleSort functions to the component.
+ * @constructor
+ * @return {void}
+ */
   constructor() {
     super();
     this.state = {
@@ -37,37 +47,60 @@ class News extends Component {
     this.handleSort = this.handleSort.bind(this);
   }
 
-/* get component initial state */
+  /**
+   * First sets the component state with empty object.
+   * @constructor
+   * @return {object}
+   */
   getInitialState() {
     return { allItems: null, newsError: '' };
   }
 
-/* Push user to login page if not logged in */
+  /**
+   * Push user to login page if not logged in
+   * @memberOf News
+   * @return {void}
+   */
   componentWillMount() {
     if (!user.isLoggedin) {
       history.push('/login');
     }
   }
 
-/* Add listener and get news*/
+
+  /**
+   * Add onchange listener and then get news from API via action
+   * @return {void}
+   */
   componentDidMount() {
     const { match } = this.props;
     NewsStore.addChangeListener(this.onChange);
     NewsActions.getNews(match.params.id);
   }
 
-/* Remove change listener */
+  /**
+   * Remove onChange event listener
+   * @return {void}
+   */
   componentWillUnmount() {
     NewsStore.removeChangeListener(this.onChange);
   }
 
-/* Called when news change */
+
+  /**
+   * Called when news state change. Set state with all news from NewsStore
+   * and Error state
+   * @return {void}
+   */
   onChange() {
     this.setState({ allItems: NewsStore.getAll(),
       newsError: NewsStore.getError() });
   }
 
-/* Sort news based on selection*/
+  /**
+   * Handles news sorting based on user selection.
+   * @return {void}
+   */
   handleSort(event) {
     const { match } = this.props;
     event.preventDefault();
@@ -76,7 +109,7 @@ class News extends Component {
   }
 
 /**
- * Renders component
+ * Renders the news component
  * @return {ReactElement}
  */
   render() {

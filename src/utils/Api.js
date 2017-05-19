@@ -1,9 +1,15 @@
 import axios from 'axios';
 
 /**
- * Api Class used for making external calls
+ * This class is used for API calls
+ * @class User
  */
 class Api {
+/**
+ * Initializes the API links.
+ * @constructor
+ * @return {void}
+ */
   constructor() {
     this.apiKey = process.env.apiKey;
     this.newsLink = 'https://newsapi.org/v1/articles?';
@@ -14,7 +20,7 @@ class Api {
     this.errorMessage = '';
   }
 /**
- *
+ * Builds the call link with query string
  * @param {string} type - The type of query
  * @param {string} value - query value
  * @return {void}
@@ -24,13 +30,17 @@ class Api {
   }
 
 /**
- * @return {void}
+ * Gets the built URL for API calls
+ * @return {string} - Returns the built URL as string
  */
   getLink() {
     return this.link;
   }
 
 /**
+ * Makes API call and stores the outcome.
+ * It stores the result in result if successful
+ * or errorMessage if not successful
  * @return {void}
  */
   makeApiCall() {

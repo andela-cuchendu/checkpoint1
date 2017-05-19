@@ -1,10 +1,13 @@
 /**
- * SourcesContainer Class
+ * This component represents all fetched sources.
+ * @class SourcesContainer
+ * @extends {Component}
  */
 class SourcesContainer {
 
 /**
- * Class constructor
+ * Sets sources to empty array.
+ * @constructor
  * @return {void}
  */
   constructor() {
@@ -12,7 +15,8 @@ class SourcesContainer {
   }
 
 /**
- *
+ * This function adds sources object to the sources
+ * array setting their properties with the parameters
  * @param {string} id - ID of the news source.
  * @param {string} name - Name of the source.
  * @param {string} description - Source description.
@@ -33,8 +37,8 @@ class SourcesContainer {
   }
 
 /**
+ * Returns the sources array
  * @return {void}
- * Get news
  */
   get() {
     return this.sources;

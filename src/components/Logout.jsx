@@ -13,7 +13,10 @@ const history = createHistory({
  */
 class Logout extends Component {
 
-/* logout user */
+/**
+ * Log out user. Ensure user is loggedin before calling the logout function. Redirect user to login page.
+ * @return {void}
+ */
   componentWillMount() {
     if (user.isLoggedin) {
       user.logOut();

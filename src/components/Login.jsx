@@ -9,12 +9,15 @@ const history = createHistory({
 });
 
 /**
- * Class for login component
+ * Class for login component.
  * @extends Component
  */
 class Login extends Component {
 
-/* Push user to landing page if already logged in */
+/**
+ * Redirect user if already loggedin.
+ * @return {void}
+ */
   componentWillMount() {
     if (user.isLoggedin) {
       history.push('/');
@@ -22,7 +25,7 @@ class Login extends Component {
   }
 
 /**
- * Renders component
+ * Renders login component with google login button and introductory message.
  * @return {ReactElement}
  */
   render() {

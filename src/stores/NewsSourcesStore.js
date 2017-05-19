@@ -6,22 +6,32 @@ import NewsDispatcher from '../dispatcher/NewsDispatcher';
 
 const CHANGE_EVENT = 'change';
 
+
 const NewsSourcesStore = assign({}, EventEmitter.prototype, {
 
   sources: [],
   error: '',
 
-/* Get all sources */
+  /**
+   * Returns the state of the store
+   * @returns {void}
+   */
   getAll() {
     return this.sources;
   },
 
-/* Get Error */
+  /**
+   * Returns the state of error
+   * @returns {void}
+   */
   getError() {
     return this.error;
   },
 
-/* Anounce Change */
+  /**
+   * Anounce Change event
+   * @returns {void}
+   */
   emitChange() {
     this.emit(CHANGE_EVENT);
   },
@@ -45,8 +55,10 @@ const NewsSourcesStore = assign({}, EventEmitter.prototype, {
 });
 
 /**
- * Register lsiteners
+ * Register lsiteners with dispatcher
+ * @return {boolean}
  */
+
 NewsDispatcher.register((payload) => {
   switch (payload.eventName) {
 

@@ -6,12 +6,14 @@ import NewsContainer from '../containers/NewsContainer';
 import Api from '../utils/Api';
 
 /**
- * NewsActions Object
+ * NewsActions Object. Represents NewsActions for News sources and articles
+ * @class
  */
 const NewsActions = {
 
 /**
- * getNews Action.
+ * getNews Action. This action fetches articles using
+ * one parameter, which is the news source ID as string.
  * @param {string} source - News source ID
  * @return {void}
  */
@@ -40,7 +42,8 @@ const NewsActions = {
   },
 
 /**
- * getSources Action
+ * getSources Action. This action fetches sources
+ * calling the API, then dispatches the action using News Dispatcher.
  * @return {void}
  */
   getSources: () => {

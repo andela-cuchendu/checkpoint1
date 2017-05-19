@@ -16,12 +16,18 @@ const LinkedinIcon = generateShareIcon('linkedin');
 let shareUrl;
 
 /**
- * Class for Share component
- * @extends Component
+ * This component represents Share buttons.
+ * @class Share
+ * @extends {Component}
  */
 class Share extends Component {
 
-/* Set component state and props */
+/**
+ * Sets the sate of component and set shareUrl to null.
+ * @param {prop} - Passed in from parent component (News)
+ * @constructor
+ * @return {void}
+ */
   constructor(props) {
     super(props);
     shareUrl = null;

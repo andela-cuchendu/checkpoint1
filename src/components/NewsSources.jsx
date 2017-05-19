@@ -12,13 +12,21 @@ const history = createHistory({
   forceRefresh: true,
 });
 
+
 /**
- * Class for NewsSources component
- * @extends Component
+ * This class represents NewsSources
+ * @class NewsSources
+ * @extends {Component}
  */
 class NewsSources extends Component {
 
-/* Set component state */
+
+/**
+ * Sets the sate of component and bind the getItemsState,
+ * sourcesChange and updateSearch functions to the component.
+ * @constructor
+ * @return {void}
+ */
   constructor() {
     super();
     this.state = {
@@ -31,19 +39,30 @@ class NewsSources extends Component {
     this.updateSearch = this.updateSearch.bind(this);
   }
 
-  /* @return {getItemsState} The The component state.*/
+  /**
+   * First sets the component state with empty object.
+   * @constructor
+   * @return {void}
+   */
   getInitialState() {
     return this.getItemsState();
   }
 
-/* Push user to login page if not logged in */
+  /**
+   * Push user to login page if not logged in
+   * @memberOf News
+   * @return {void}
+   */
   componentWillMount() {
     if (!user.isLoggedin) {
       history.push('/login');
     }
   }
 
-/* Add listener and get sources*/
+  /**
+   * Add onchange listener and then get news from API via action
+   * @return {void}
+   */
   componentDidMount() {
     NewsSourcesStore.addChangeListener(this.sourcesChange);
     NewsActions.getSources();
@@ -57,7 +76,11 @@ class NewsSources extends Component {
     };
   }
 
-/* Called when sources change */
+  /**
+   * Called when news sources state change. Set state with all news sources from SourcesStore
+   * and Error state
+   * @return {void}
+   */
   sourcesChange() {
     const itemState = this.getItemsState();
     this.setState({
@@ -66,18 +89,24 @@ class NewsSources extends Component {
     });
   }
 
-/* Remove change listener */
+  /**
+   * Remove onChange event listener
+   * @return {void}
+   */
   componentWillUnMount() {
     NewsSourcesStore.removeChangeListener(this.sourcesChange);
   }
 
-/* Update view with search result */
+  /**
+   * Update state by taking the search value from user
+   * @return {void}
+   */
   updateSearch(event) {
     this.setState({ search: event.target.value });
   }
 
 /**
- * Renders component
+ * Renders the source component
  * @return {ReactElement}
  */
   render() {

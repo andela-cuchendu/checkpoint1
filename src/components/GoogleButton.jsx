@@ -10,11 +10,14 @@ let userClick = false;
 let Parent = null; // For gapi to access this component
 
 /**
- * Class for google button
+ * This Class generates the google login button
  * @extends Component
  */
 class GoogleButton extends Component {
-/* bind onSiginIn function */
+/**
+ * Bind the onSiginIn function with this class.
+ * @constructor
+ */
   constructor() {
     super();
     Parent = this; // Assign this to Parent for gapi to access callback
@@ -27,8 +30,9 @@ class GoogleButton extends Component {
   }
 
 /**
- * Saves user details and redirect to landin page
+ * Saves user details using user model then redirect to landin page
  * @param {Object} googleUser 
+ * @return {void}
  */
   onSignIn(googleUser) {
     const w3 = googleUser.getBasicProfile();
@@ -39,14 +43,15 @@ class GoogleButton extends Component {
   }
 
 /**
- * Ensures the google button is clicked.
+ * Ensures that the google button is clicked.
+ *If not, redirection will not occur.
  */
   onClick() {
     userClick = true;
   }
 
 /**
- * Render the google button
+ * This function renders the google button and registers the callback
  */
   renderGoogleLoginButton() {
     gapi.signin2.render('my-signin2', {
@@ -61,7 +66,7 @@ class GoogleButton extends Component {
   }
 
 /**
- * Renders component
+ * Renders the component
  * @return {ReactElement}
  */
   render() {

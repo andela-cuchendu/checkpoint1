@@ -11,17 +11,26 @@ const NewsStore = assign({}, EventEmitter.prototype, {
   news: [],
   error: '',
 
-/* Get all news */
+ /**
+   * Returns all news
+   * @returns {void}
+   */
   getAll() {
     return this.news;
   },
 
-/* Get Error */
+  /**
+   * Returns the state of error
+   * @returns {void}
+   */
   getError() {
     return this.error;
   },
 
-/* Anounce Change */
+ /**
+   * Anounce Change event
+   * @returns {void}
+   */
   emitChange() {
     this.emit(CHANGE_EVENT);
   },
@@ -45,7 +54,8 @@ const NewsStore = assign({}, EventEmitter.prototype, {
 });
 
 /**
- * Register listener
+ * Register lsiteners with dispatcher
+ * @return {boolean}
  */
 NewsDispatcher.register((payload) => {
   switch (payload.eventName) {
