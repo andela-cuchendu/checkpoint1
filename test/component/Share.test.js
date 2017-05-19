@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import expect from 'expect';
-import Share from '../../src/components/share';
+import Share from '../../src/components/Share';
 
 describe('Share component', () => {
   const wrapper = shallow(<Share title={'Testing Share Button'} share={'https://github.com'} />);
