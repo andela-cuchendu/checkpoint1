@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import expect from 'expect';
-import News from '../../src/components/news';
+import News from '../../src/components/News';
 import allItems from '../data/NewsData';
 
 describe('News Component', () => {

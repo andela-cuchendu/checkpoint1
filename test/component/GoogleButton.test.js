@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import expect from 'expect';
-import GoogleButton from '../../src/components/googlebutton';
+import GoogleButton from '../../src/components/GoogleButton';
 
 describe('GoogleButton component', () => {
   const wrapper2 = shallow(<GoogleButton />);

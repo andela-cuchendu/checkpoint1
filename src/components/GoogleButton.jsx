@@ -28,7 +28,7 @@ class GoogleButton extends Component {
 
 /**
  * Saves user details and redirect to landin page
- * @param {*} googleUser
+ * @param {Object} googleUser 
  */
   onSignIn(googleUser) {
     const w3 = googleUser.getBasicProfile();

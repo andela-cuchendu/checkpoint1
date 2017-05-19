@@ -13,11 +13,11 @@ class SourcesContainer {
 
 /**
  *
- * @param {*} id
- * @param {*} name
- * @param {*} description
- * @param {*} category
- * @param {*} sortBysAvailable
+ * @param {string} id - ID of the news source.
+ * @param {string} name - Name of the source.
+ * @param {string} description - Source description.
+ * @param {string} category - Source category.
+ * @param {string} sortBysAvailable - Available sort type.
  * @return {void}
  * Add Source
  */

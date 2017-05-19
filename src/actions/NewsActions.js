@@ -12,7 +12,7 @@ const NewsActions = {
 
 /**
  * getNews Action.
- * @param {*} source
+ * @param {string} source - News source ID
  * @return {void}
  */
   getNews: (source) => {

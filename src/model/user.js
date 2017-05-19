@@ -20,7 +20,7 @@ class User {
 
   /**
    * Login a user
-   * @param {*} context
+   * @param {object} context - User object
    * @return {void}
    */
   Login(context) {

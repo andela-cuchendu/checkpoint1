@@ -1,5 +1,5 @@
 import expect from 'expect';
-import User from '../../src/model/user';
+import User from '../../src/model/User';
 
 const loginDetails = { name: 'Chibu Jax', email: 'chibujax@gmial.com', imageUrl: 'jaximg.png', favorites: {} };
 

@@ -15,8 +15,8 @@ class Api {
   }
 /**
  *
- * @param {*} type
- * @param {*} value
+ * @param {string} type - The type of query
+ * @param {string} value - query value
  * @return {void}
  */
   addQuery(type, value) {
